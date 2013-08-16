@@ -59,6 +59,120 @@
 					</div>
 				</section>
 
+				<section>
+					<h2>El futuro es un Drupal RESTful</h2>
+					<img src="assets/images/drupal-wscci.jpg">
+					<a href="http://buytaert.net/the-future-is-a-restful-drupal">http://buytaert.net/the-future-is-a-restful-drupal</a>
+				</section>
+
+				<section>
+					<h2>La iniciativa WSCCI</h2>
+					<div>
+						<br/>
+						<p>
+							<div class="half">
+								<img src="assets/images/whiskey.jpg">
+								<br/><br/>
+							</div>
+						</p>
+						<p>
+							<div class="half">
+							 	 Web Services and Context Core Initiative propone la utilización de componentes del Framework Symfony 2 originalmente se mencionó HttpFoundation y ClassLoader.
+							 	 <br/><br/>
+							</div>
+						</p>
+					</div>
+					<div class="vertical">
+						<a href="http://groups.drupal.org/wscci">http://groups.drupal.org/wscci</a>
+					</div>
+				</section>
+
+				<section>
+					<h2>Que componentes utilizará Drupal 8?</h2>
+					<p>HttpFoundation & HttpKernel, ClassLoader, Routing, EventDispatcher, DependencyInjection, Twig, Validator, Process, Serializer, Yaml.<br/><br/></p>
+					<p>Otros componentes relacionados a Symfony ó que utilizan componentes de este serán utilizados.<br/><br/></p>
+					<p>Composer, Annotations, Guzzle, Assetic. <br/><br/></p>
+					<p><a href="http://crossfunctional.net/blog/2013/mar/symfony-components-in-drupal-8">http://crossfunctional.net/blog/2013/mar/symfony-components-in-drupal-8</a></p>
+				</section>
+
+				<section>
+					<h2>Que es REST ?</h2>
+					<p>REST = Representational State Transfer.<br/><br/></p>
+					<ul>
+						<li>Protocolo cliente servidor que permite intercambiar información entre diferentes dispositivos.<br/><br/></li>
+						<li>Un conjunto de operaciones bien definidas. POST, GET, PUT y DELETE. Con frecuencia estas operaciones se relacionan a las operaciones CRUD que se requieren para el acceso y la persistencia de datos.<br/><br/></li>
+						<li>Una sintaxis universal para identificar los recursos.</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Para que sirve?</h2>
+					<p>Desacoplar back-end y frontend, podemos tener un sitio en Drupal, exponer los datos en diferentes formatos y consumirlos desde nuestro sitio en Drupal ó desde alguna aplicación construida en Symfony, Silex, HTML5, JS framework (Backbone, Angular, Ember) ó algun SDK nativo para móvil (iOS/android).<br/><br/></p>
+					<p><a href="http://drupalize.me/blog/201307/podcast-episode-22-decoupling-drupal">http://drupalize.me/blog/201307/podcast-episode-22-decoupling-drupal</a><br/><br/></p>
+					<p><a href="https://github.com/Lullabot/copelandia">https://github.com/Lullabot/copelandia</a></p>
+				</section>
+
+				<section>
+					<h2>Cómo planea Drupal 8 hacer esto?</h2>
+					<ul>
+						<li>Obteniendo y enviando datos de manera programática en Drupal desde un cliente utilizando un API. <br/><br/></li> 
+						<li>Drupal trabaja como un proveedor de interfaz de servicios web.<br/><br/></li>
+						<li>Los datos son intercambiados en un formato entendible para los dispositivos.<br/><br/></li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Qué pasará con los módulos en Drupal 8?</h1>
+				</section>
+
+				<section>
+					<h2>YAML</h2>
+					<div class="left">
+						Es un formato de serialización de datos legible por humanos.
+					</div>
+					<br/>
+					<div class="left">
+						YAML significa "YAML Ain't Another Markup Language (en castellano, "YAML no es otro lenguaje de marcado"). <br/> A comienzos de su desarrollo, YAML significaba "Yet Another Markup Language" ("Otro lenguaje de marcado más") para distinguir su propósito centrado en los datos en lugar del marcado de documentos.
+					</div>
+					<br/>
+					<p><a href="http://www.yaml.org/">http://www.yaml.org/</a></p>
+				</section>
+
+				<section>
+					<h2>No más module.info ahora es module.info.yml</h2>
+foobar.info.yml
+<pre><code class="markdown">
+name: Foobar
+type: module
+description: 'This is a demo for creating Drupal 8 modules.'
+package: Custom
+version: 8.x-1.0
+core: 8.x
+dependencies:
+  - node
+  - block
+hidden: false
+
+</code></pre>
+				</section>
+
+
+				<section>
+					<h2>Otros lugares en donde se utilizará YAML</h2>
+
+<pre><code class="markdown">
+└── foobar
+    ├── config
+    │   └── foobar.settings.yml
+    ├── foobar.info.yml
+    ├── foobar.install
+    ├── foobar.module
+    ├── foobar.routing.yml
+
+</code></pre>
+				</section>
+
+
 			</div>
 
 		</div>
