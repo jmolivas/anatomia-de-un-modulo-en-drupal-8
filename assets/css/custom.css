@@ -5,6 +5,10 @@ div.half {
 	padding-left:5%;
 }
 
-div.left {
+div.text-left {
 	text-align: left;
+}
+
+div.text-medium, code.text-medium {
+	font-size: 90%;
 }
