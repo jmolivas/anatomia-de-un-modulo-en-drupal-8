@@ -213,6 +213,168 @@ hidden: false
 				 	</blockquote>
 				</section>
 
+				<section>
+					<h2>Estrcutura de módulo block</h2>
+<pre><code class="markdown">
+.
+├── block.admin.inc
+├── block.api.php
+├── block.info.yml
+├── block.install
+├── block.js
+├── block.module
+├── block.routing.yml
+├── block.services.yml
+├── config
+│   └── schema
+│       └── block.schema.yml
+├── css
+│   └── block.admin.css
+├── custom_block
+│   ├── config
+│   │   ├── custom_block.type.basic.yml
+│   │   ├── entity.view_mode.custom_block.full.yml
+│   │   └── schema
+│   │       └── custom_block.schema.yml
+│   ├── custom_block.info.yml
+│   ├── custom_block.install
+│   ├── custom_block.js
+│   ├── custom_block.module
+│   ├── custom_block.pages.inc
+│   ├── custom_block.routing.yml
+│   ├── lib
+│   │   └── Drupal
+│   │       └── custom_block
+│   │           ├── Controller
+│   │           │   └── CustomBlockController.php
+│   │           ├── CustomBlockAccessController.php
+│   │           ├── CustomBlockFormController.php
+│   │           ├── CustomBlockInterface.php
+│   │           ├── CustomBlockRenderController.php
+│   │           ├── CustomBlockStorageController.php
+│   │           ├── CustomBlockTranslationController.php
+│   │           ├── CustomBlockTypeAccessController.php
+│   │           ├── CustomBlockTypeFormController.php
+│   │           ├── CustomBlockTypeInterface.php
+│   │           ├── CustomBlockTypeListController.php
+│   │           ├── Form
+│   │           │   └── CustomBlockTypeDeleteForm.php
+│   │           ├── Plugin
+│   │           │   ├── Block
+│   │           │   │   └── CustomBlockBlock.php
+│   │           │   ├── Core
+│   │           │   │   └── Entity
+│   │           │   │       ├── CustomBlock.php
+│   │           │   │       └── CustomBlockType.php
+│   │           │   └── Derivative
+│   │           │       └── CustomBlock.php
+│   │           └── Tests
+│   │               ├── CustomBlockBuildContentTest.php
+│   │               ├── CustomBlockCreationTest.php
+│   │               ├── CustomBlockFieldTest.php
+│   │               ├── CustomBlockLoadHooksTest.php
+│   │               ├── CustomBlockPageViewTest.php
+│   │               ├── CustomBlockRevisionsTest.php
+│   │               ├── CustomBlockSaveTest.php
+│   │               ├── CustomBlockTestBase.php
+│   │               ├── CustomBlockTranslationUITest.php
+│   │               ├── CustomBlockTypeTest.php
+│   │               └── PageEditTest.php
+│   ├── templates
+│   │   └── custom-block-add-list.html.twig
+│   └── tests
+│       └── modules
+│           └── custom_block_test
+│               ├── custom_block_test.info.yml
+│               └── custom_block_test.module
+├── lib
+│   └── Drupal
+│       └── block
+│           ├── Access
+│           │   └── BlockThemeAccessCheck.php
+│           ├── BlockAccessController.php
+│           ├── BlockBase.php
+│           ├── BlockFormController.php
+│           ├── BlockInterface.php
+│           ├── BlockListController.php
+│           ├── BlockPluginBag.php
+│           ├── BlockPluginInterface.php
+│           ├── BlockRenderController.php
+│           ├── BlockStorageController.php
+│           ├── Controller
+│           │   ├── BlockAddController.php
+│           │   └── BlockListController.php
+│           ├── Form
+│           │   └── BlockDeleteForm.php
+│           ├── Plugin
+│           │   ├── Core
+│           │   │   └── Entity
+│           │   │       └── Block.php
+│           │   ├── Derivative
+│           │   │   └── BlockPluginUI.php
+│           │   ├── PluginUI
+│           │   │   └── BlockPluginUI.php
+│           │   ├── Type
+│           │   │   └── BlockManager.php
+│           │   └── views
+│           │       └── display
+│           │           └── Block.php
+│           ├── Routing
+│           │   └── RouteSubscriber.php
+│           └── Tests
+│               ├── BlockAdminThemeTest.php
+│               ├── BlockCacheTest.php
+│               ├── BlockHiddenRegionTest.php
+│               ├── BlockHookOperationTest.php
+│               ├── BlockHtmlIdTest.php
+│               ├── BlockInterfaceTest.php
+│               ├── BlockInvalidRegionTest.php
+│               ├── BlockLanguageCacheTest.php
+│               ├── BlockLanguageTest.php
+│               ├── BlockLibrarySearchTest.php
+│               ├── BlockStorageUnitTest.php
+│               ├── BlockTemplateSuggestionsUnitTest.php
+│               ├── BlockTest.php
+│               ├── BlockTestBase.php
+│               ├── BlockTitleXSSTest.php
+│               ├── BlockUiTest.php
+│               ├── NewDefaultThemeBlocksTest.php
+│               ├── NonDefaultBlockAdminTest.php
+│               └── Views
+│                   └── DisplayBlockTest.php
+├── templates
+│   └── block.html.twig
+└── tests
+    └── modules
+        ├── block_test
+        │   ├── block_test.info.yml
+        │   ├── block_test.module
+        │   ├── config
+        │   │   └── block.block.stark.test_block.yml
+        │   ├── lib
+        │   │   └── Drupal
+        │   │       └── block_test
+        │   │           └── Plugin
+        │   │               └── Block
+        │   │                   ├── TestBlockInstantiation.php
+        │   │                   ├── TestCacheBlock.php
+        │   │                   ├── TestHtmlIdBlock.php
+        │   │                   └── TestXSSTitleBlock.php
+        │   └── themes
+        │       └── block_test_theme
+        │           └── block_test_theme.info.yml
+        └── block_test_views
+            ├── block_test_views.info.yml
+            ├── block_test_views.module
+            └── test_views
+                ├── views.view.test_view_block.yml
+                └── views.view.test_view_block2.yml
+
+
+</code></pre>
+				</section>
+
+
 			</div>
 
 		</div>
