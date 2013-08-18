@@ -443,12 +443,20 @@ hidden: false
 
 				<section>
 					<h2>Routing</h2>
-					<p>
-						Todas nuestras páginas necesitan un URL. 
-					</p>
-					<p>
+					<div class="break">
 						Una ruta es un mapeo desde un URL hasta un acción en un controlador.
-					</p>
+						<br/><br/>
+					</div>
+foobar.routing.yml					
+<pre><code class="markdown">
+foobar:
+  pattern: 'admin/foobar'
+  defaults:
+    _content: '\Drupal\foobar\Controller\FoobarController::foobarPage'
+  requirements:
+    _permission: 'access administration pages'
+
+</code></pre>
 				</section>
 
 				<section>
