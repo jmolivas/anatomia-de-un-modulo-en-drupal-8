@@ -126,8 +126,19 @@
 					<div class="text-medium">
 						Composer es un  gestor de dependencias para PHP.
 						<br/>
-						Solo es necesario agregar las dependencias del proyecto a un archivo llamado composer.json, ejecutar algunos comandos y Composer descargará automáticamente estas dependencias para el proyecto y configurará el cargador automático (autoload.php).
+						Solo es necesario agregar las dependencias del proyecto a un archivo llamado composer.json, ejecutar algunos comandos y Composer descargará automáticamente estas dependencias para el proyecto.
 					</div>
+					<br/>
+					<div class="text-medium">
+						<ul>
+							<li>Utilice Composer cuando maneje las dependencias de un solo proyecto.<br/><br/></li>
+							<li>Utilice PEAR cuando maneje las dependencias de todo el sistema de PHP en su plataforma.</li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<h2>Como utilizar Composer</h2>
 
 <pre><code class="markdown text-medium">
 /* Project URL */
@@ -136,8 +147,15 @@ http://getcomposer.org
 /* Download using curl */
 $curl -sS https://getcomposer.org/installer | php
 
-/* Download if you don't have curl: */
-$php -r "eval('?>'.file_get_contents('https://getcomposer.org/installer'));"  
+/* composer.json */
+{
+    "require": {
+        "monolog/monolog": "1.2.*"
+    }
+}
+
+/* Download dependencies using composer */
+$php composer.phar install
 
 </code></pre>
 				</section>
@@ -413,6 +431,16 @@ hidden: false
 </code></pre>
 				</section>
 
+				<section>
+					<h2>Inyección de Dependencias</h2>
+					<div>
+						La inyección de dependencias consiste en pasar (inyectar) a cada componente o clase todos los objetos que necesitan (dependencias) ya creados y configurados a través de sus constructores, métodos o campos.
+					</div>
+					<br/>
+					<p>
+						<a href="http://fabien.potencier.org/article/11/what-is-dependency-injection">What is Dependency Injection?</a>
+					</p>
+				</section>
 
 			</div>
 
