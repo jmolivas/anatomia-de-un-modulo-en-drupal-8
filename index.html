@@ -68,23 +68,19 @@
 				<section>
 					<h2>La iniciativa WSCCI</h2>
 					<div>
-						<br/>
-						<p>
-							<div class="half">
-								<img src="assets/images/whiskey.jpg">
-								<br/><br/>
-							</div>
-						</p>
-						<p>
-							<div class="half">
-							 	 Web Services and Context Core Initiative propone la utilización de componentes del Framework Symfony 2 originalmente se mencionó HttpFoundation y ClassLoader.
-							 	 <br/><br/>
-							</div>
-						</p>
+						<div class="half">
+							<img src="assets/images/whiskey.jpg">
+							<br/><br/>
+						</div>
+
+						<div class="half">
+						 	 Web Services and Context Core Initiative propone la utilización de componentes del Framework Symfony 2 originalmente se mencionó HttpFoundation y ClassLoader.
+						</div>
 					</div>
-					<div class="vertical">
+					<div class="break">
 						<a href="http://groups.drupal.org/wscci">http://groups.drupal.org/wscci</a>
 					</div>
+					</p>
 				</section>
 
 				<section>
@@ -144,6 +140,49 @@ $curl -sS https://getcomposer.org/installer | php
 $php -r "eval('?>'.file_get_contents('https://getcomposer.org/installer'));"  
 
 </code></pre>
+				</section>
+
+				<section>
+					<h2>PSR-0</h2>
+					<div class="text-medium">
+						Es el primero de los estándares de código recomendados y establecido por el PHP Framework Interoperability Group.
+					</div>
+					<p>
+						<a href="http://www.php-fig.org/">http://www.php-fig.org/</a>
+					</p>
+					<br/>
+					<p>Algunos puntos obligatorios:</p>
+					<ul class="text-small left">
+						<li class="text-medium left">Los namespaces y las clases deben tener la siguiente estructura <br/> \&lt;Vendor name&gt;\(&lt;Namespace&gt;)*&lt;Class Name&gt;</li>
+						<li class="text-medium left">Cada namespace debe tener un namespace superior ("Vendor name")</li>
+						<li class="text-medium left">Cada namespace puede tener tantos sub-namespaces como se quiera</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Ejemplo de implementación</h2>
+					<div class="text-medium left">
+						A continuación, se muestra una función de ejemplo para demostrar de forma sencilla cómo se cargan de automáticamente las clases con la propuesta anterior.
+					</div>	
+<pre><code class="php text-small">
+&lt;?php
+
+function autoload($className)
+{
+    $className = ltrim($className, '\\');
+    $fileName  = '';
+    $namespace = '';
+    if ($lastNsPos = strrpos($className, '\\')) {
+        $namespace = substr($className, 0, $lastNsPos);
+        $className = substr($className, $lastNsPos + 1);
+        $fileName  = str_replace('\\', DIRECTORY_SEPARATOR, $namespace) . DIRECTORY_SEPARATOR;
+    }
+    $fileName .= str_replace('_', DIRECTORY_SEPARATOR, $className) . '.php';
+
+    require $fileName;
+}  
+
+</code></pre>				
 				</section>
 
 				<section>
