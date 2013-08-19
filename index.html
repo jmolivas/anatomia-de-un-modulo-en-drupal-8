@@ -450,6 +450,28 @@ foobar:
 				</section>
 
 				<section>
+					<h2>hook_menu()</h2>
+foobar.module 
+<pre><code class="php">
+/**
+ * Implements hook_menu().
+ */
+function foobar_menu() {
+  /* The paths given here need to match the ones in 
+     foobar.routing.yml exactly. */
+  $items['admin/foobar'] = array(
+    'title' => 'Foobar',
+    'description' => 'This is the demo foobar page.',
+    // The name of the route from foobar.routing.yml
+    'route_name' => 'foobar',
+  );
+  return $items;
+}
+
+</code></pre>
+				</section>
+
+				<section>
 					<h2>Controller</h2>
 					<p class="text-medium">
 					Un controlador es una función que se encarga de obtener la información de la petición HTTP y de generar y devolver la respuesta. 
@@ -563,6 +585,23 @@ Drupal\foobar\Controller\FoobarController.php
 						Un contenedor de servicios (o contenedor de inyección de dependencias) es un objeto PHP que gestiona la creación de instancias de los servicios (es decir, de los objetos).
 					</div>
 				</section>
+
+				<section>
+					<h2>Gracias + DEMO</h2>
+					<div class="half">
+						<img src="assets/images/jmolivas.jpg">
+						<p>Jesús Manuel Olivas</p>
+						<p><strong>@jmolivas</strong></p>
+						<a href="http://jmolivas.com">http://jmolivas.com</a>
+					</div>	
+					<div class="half">
+						<img src="assets/images/dmouse.jpg">
+						<p>David Flores ‏</p>
+						<p><strong>@dmouse</strong></p>
+						<a href="http://dmouse.net">http://dmouse.net</a>
+					</div>
+				</section>
+
 
 			</div>
 
