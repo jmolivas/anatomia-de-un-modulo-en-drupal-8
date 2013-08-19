@@ -449,7 +449,6 @@ foobar:
 </code></pre>
 				</section>
 
-
 				<section>
 					<h2>Controller</h2>
 					<p class="text-medium">
@@ -458,6 +457,36 @@ foobar:
 					<p>
 					La respuesta puede ser una página HTML, un documento XML, un array JSON serializado, una imagen, una redirección a otra página, un error de tipo 404 o cualquier otra cosa que se te ocurra. El controlador contiene toda la lógica que tu aplicación necesita para generar el contenido de la página.
 					</p>
+				</section>
+
+<section>
+					<h2>Controller implementación</h2>
+Drupal\foobar\Controller\FoobarController.php
+<pre><code class="php medium-text">
+&lt;?php
+  namespace Drupal\foobar\Controller;
+ 
+  use Drupal\Core\Controller\ControllerInterface;
+  use Symfony\Component\DependencyInjection\ContainerInterface;
+ 
+  class FoobarController implements ControllerInterface {
+ 
+  public static function create(ContainerInterface $container) {
+    return new static($container->get('module_handler'));
+  }
+
+   /**
+   * This will return the output of the foobar page.
+   */
+  public function foobarPage() {
+    return array(
+      '#markup' => t('This is the demo foobar page.'),
+    );
+  }
+ 
+}
+ 
+</code></pre>
 				</section>
 
 				<section>
@@ -469,6 +498,63 @@ foobar:
 					<p>
 						<a href="http://fabien.potencier.org/article/11/what-is-dependency-injection">What is Dependency Injection?</a>
 					</p>
+				</section>
+
+<section>
+					<h2>Controller Inyección de Dependencias</h2>
+<pre><code class="php medium-text">
+&lt;?php
+
+  namespace Drupal\foobar\Controller;
+ 
+  use Drupal\Core\Controller\ControllerInterface;
+  use Symfony\Component\DependencyInjection\ContainerInterface;
+
+  /* Add use Connection */
+  use Drupal\Core\Database\Connection;
+ 
+  class FoobarController implements ControllerInterface {
+
+   / **
+    * The database connection.
+    *
+    * @var \Drupal\Core\Database\Connection;
+    */
+    protected $database; 
+    /**
+     * Constructs a \Drupal\foobar\Controller\FoobarController object.
+     *
+     * @param \Drupal\Core\Database\Connection $database
+     *   The database connection.
+    */
+    public function __construct(Connection $database) {
+      $this->database = $database;
+    } 
+    /**
+     * {@inheritdoc}
+     */
+    public static function create(ContainerInterface $container) {
+      return new static($container->get('database'));
+    } 
+
+    /**
+     * This will return the output of the foobar page.
+     */
+    public function foobarPage() {
+
+      /* query the database
+       $this->database->query('YOUR SQL');
+       handle the db results as usual
+      */
+
+      return array(
+        '#markup' => t('This is the demo foobar page.'),
+      );
+    }
+ 
+  }
+
+</code></pre>
 				</section>
 
 				<section>
