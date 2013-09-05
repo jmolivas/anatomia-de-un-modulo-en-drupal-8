@@ -231,20 +231,15 @@ function autoload($className)
 				</section>
 
 				<section>
-					<h2>De module.info <br>a<br> module.info.yml</h2>
-foobar.info.yml
+					<h2>De slang.info <br>a<br> slang.info.yml</h2>
+slang.info.yml
 <pre><code class="markdown">
-name: Foobar
+name: Slang
 type: module
-description: 'This is a demo for creating Drupal 8 modules.'
-package: Custom
-version: 8.x-1.0
+description: 'Slang'
+package: Sample
 core: 8.x
-dependencies:
-  - node
-  - block
-configure: admin/config/foobar
-hidden: false
+configure: admin/config/slang
 
 </code></pre>
 				</section>
@@ -253,13 +248,12 @@ hidden: false
 					<h2>Otros lugares en donde se utilizará YAML</h2>
 
 <pre><code class="markdown">
-└── foobar
-    ├── config
-    │   └── foobar.settings.yml
-    ├── foobar.info.yml
-    ├── foobar.install
-    ├── foobar.module
-    ├── foobar.routing.yml
+.
+├── config
+│   └── slang.settings.yml
+├── slang.info.yml
+├── slang.routing.yml
+├── slang.services.yml
 </code></pre>
 				</section>
 
@@ -272,162 +266,36 @@ hidden: false
 				</section>
 
 				<section>
-					<h2>Estrcutura de módulo block</h2>
-<pre><code class="markdown">
-.
-├── block.admin.inc
-├── block.api.php
-├── block.info.yml
-├── block.install
-├── block.js
-├── block.module
-├── block.routing.yml
-├── block.services.yml
+					<h2>Estructura de módulo block</h2>
+<pre><code class="markdown">.
 ├── config
-│   └── schema
-│       └── block.schema.yml
-├── css
-│   └── block.admin.css
-├── custom_block
-│   ├── config
-│   │   ├── custom_block.type.basic.yml
-│   │   ├── entity.view_mode.custom_block.full.yml
-│   │   └── schema
-│   │       └── custom_block.schema.yml
-│   ├── custom_block.info.yml
-│   ├── custom_block.install
-│   ├── custom_block.js
-│   ├── custom_block.module
-│   ├── custom_block.pages.inc
-│   ├── custom_block.routing.yml
-│   ├── lib
-│   │   └── Drupal
-│   │       └── custom_block
-│   │           ├── Controller
-│   │           │   └── CustomBlockController.php
-│   │           ├── CustomBlockAccessController.php
-│   │           ├── CustomBlockFormController.php
-│   │           ├── CustomBlockInterface.php
-│   │           ├── CustomBlockRenderController.php
-│   │           ├── CustomBlockStorageController.php
-│   │           ├── CustomBlockTranslationController.php
-│   │           ├── CustomBlockTypeAccessController.php
-│   │           ├── CustomBlockTypeFormController.php
-│   │           ├── CustomBlockTypeInterface.php
-│   │           ├── CustomBlockTypeListController.php
-│   │           ├── Form
-│   │           │   └── CustomBlockTypeDeleteForm.php
-│   │           ├── Plugin
-│   │           │   ├── Block
-│   │           │   │   └── CustomBlockBlock.php
-│   │           │   ├── Core
-│   │           │   │   └── Entity
-│   │           │   │       ├── CustomBlock.php
-│   │           │   │       └── CustomBlockType.php
-│   │           │   └── Derivative
-│   │           │       └── CustomBlock.php
-│   │           └── Tests
-│   │               ├── CustomBlockBuildContentTest.php
-│   │               ├── CustomBlockCreationTest.php
-│   │               ├── CustomBlockFieldTest.php
-│   │               ├── CustomBlockLoadHooksTest.php
-│   │               ├── CustomBlockPageViewTest.php
-│   │               ├── CustomBlockRevisionsTest.php
-│   │               ├── CustomBlockSaveTest.php
-│   │               ├── CustomBlockTestBase.php
-│   │               ├── CustomBlockTranslationUITest.php
-│   │               ├── CustomBlockTypeTest.php
-│   │               └── PageEditTest.php
-│   ├── templates
-│   │   └── custom-block-add-list.html.twig
-│   └── tests
-│       └── modules
-│           └── custom_block_test
-│               ├── custom_block_test.info.yml
-│               └── custom_block_test.module
+│   └── slang.settings.yml
 ├── lib
 │   └── Drupal
-│       └── block
-│           ├── Access
-│           │   └── BlockThemeAccessCheck.php
-│           ├── BlockAccessController.php
-│           ├── BlockBase.php
-│           ├── BlockFormController.php
-│           ├── BlockInterface.php
-│           ├── BlockListController.php
-│           ├── BlockPluginBag.php
-│           ├── BlockPluginInterface.php
-│           ├── BlockRenderController.php
-│           ├── BlockStorageController.php
+│       └── slang
 │           ├── Controller
-│           │   ├── BlockAddController.php
-│           │   └── BlockListController.php
+│           │   └── DefaultController.php
 │           ├── Form
-│           │   └── BlockDeleteForm.php
+│           │   └── SlangSettingsForm.php
 │           ├── Plugin
-│           │   ├── Core
-│           │   │   └── Entity
-│           │   │       └── Block.php
-│           │   ├── Derivative
-│           │   │   └── BlockPluginUI.php
-│           │   ├── PluginUI
-│           │   │   └── BlockPluginUI.php
-│           │   ├── Type
-│           │   │   └── BlockManager.php
-│           │   └── views
-│           │       └── display
-│           │           └── Block.php
-│           ├── Routing
-│           │   └── RouteSubscriber.php
-│           └── Tests
-│               ├── BlockAdminThemeTest.php
-│               ├── BlockCacheTest.php
-│               ├── BlockHiddenRegionTest.php
-│               ├── BlockHookOperationTest.php
-│               ├── BlockHtmlIdTest.php
-│               ├── BlockInterfaceTest.php
-│               ├── BlockInvalidRegionTest.php
-│               ├── BlockLanguageCacheTest.php
-│               ├── BlockLanguageTest.php
-│               ├── BlockLibrarySearchTest.php
-│               ├── BlockStorageUnitTest.php
-│               ├── BlockTemplateSuggestionsUnitTest.php
-│               ├── BlockTest.php
-│               ├── BlockTestBase.php
-│               ├── BlockTitleXSSTest.php
-│               ├── BlockUiTest.php
-│               ├── NewDefaultThemeBlocksTest.php
-│               ├── NonDefaultBlockAdminTest.php
-│               └── Views
-│                   └── DisplayBlockTest.php
-├── templates
-│   └── block.html.twig
-└── tests
-    └── modules
-        ├── block_test
-        │   ├── block_test.info.yml
-        │   ├── block_test.module
-        │   ├── config
-        │   │   └── block.block.stark.test_block.yml
-        │   ├── lib
-        │   │   └── Drupal
-        │   │       └── block_test
-        │   │           └── Plugin
-        │   │               └── Block
-        │   │                   ├── TestBlockInstantiation.php
-        │   │                   ├── TestCacheBlock.php
-        │   │                   ├── TestHtmlIdBlock.php
-        │   │                   └── TestXSSTitleBlock.php
-        │   └── themes
-        │       └── block_test_theme
-        │           └── block_test_theme.info.yml
-        └── block_test_views
-            ├── block_test_views.info.yml
-            ├── block_test_views.module
-            └── test_views
-                ├── views.view.test_view_block.yml
-                └── views.view.test_view_block2.yml
-
+│           │   ├── Block
+│           │   │   ├── ShowCountryBlock.php
+│           │   │   └── SlangBlockBase.php
+│           │   └── Twig
+│           │       ├── TwigFilesystemLoader.php
+│           │       └── TwigTitle.php
+│           ├── Services
+│           │   └── Slang.php
+│           ├── SlangServiceCompilerPass.php
+│           └── SlangServiceProvider.php
+├── slang.info.yml
+├── slang.module
+├── slang.routing.yml
+├── slang.services.yml
+└── templates
+    ├── base.html.twig
+    ├── example.html.twig
+    └── slang.html.twig
 
 </code></pre>
 				</section>
@@ -438,37 +306,49 @@ hidden: false
 						Una ruta es un mapeo desde un URL hasta un acción en un controlador.
 						<br/><br/>
 					</div>
-foobar.routing.yml					
+slang.routing.yml					
 <pre><code class="markdown">
-foobar_content:
-  pattern: '/admin/foobar'
+slang_settings_form:
+  pattern: '/admin/config/slang'
   defaults:
-    _content: '\Drupal\foobar\Controller\FoobarController::foobarPage'
+    _form: '\Drupal\slang\Form\SlangSettingsForm'
   requirements:
-    _permission: 'access view content'
+    _permission: 'administer settings'
 
+slang_hello_name:
+  pattern: '/slang/hello/{name}'
+  defaults:
+    _controller: '\Drupal\slang\Controller\DefaultController::helloAction'
+  requirements:
+    _permission: "view content"
+
+slang_phrases:
+  pattern: '/slang/{country}'
+  defaults:
+    _controller: '\Drupal\slang\Controller\DefaultController::slangAction'
+  requirements:
+    _permission: 'view content'
 </code></pre>
 				</section>
 
 				<section>
 					<h2>hook_menu()</h2>
-foobar.module 
+slang.module 
 <pre><code class="php text-small">&lt;?php
 
 /**
  * Implements hook_menu().
  */
-function foobar_menu() {
-  /* The paths given here need to match the ones in 
-     foobar.routing.yml exactly. */
-  $items['admin/foobar'] = array(
-    'title' => 'Foobar',
-    'description' => 'This is the demo foobar page.',
-    // The name of the route from foobar.routing.yml
-    'route_name' => 'foobar_content',
+function slang_menu(){
+  $items = array();
+  $items['/admin/config/slang'] = array(
+    'title' => 'Slang Settings',
+    'description' => 'Slang settings.',
+    'route_name' => 'slang_settings_form',
   );
   return $items;
 }
+
 
 </code></pre>
 				</section>
@@ -485,30 +365,76 @@ function foobar_menu() {
 
 <section>
   <h2>Controller implementación</h2>
-Drupal\foobar\Controller\FoobarController.php
+slang/lib/Drupal/slang/Controller/DefaultController.php
 <pre><code class="php text-small">&lt;?php
+namespace Drupal\slang\Controller;
 
-  namespace Drupal\foobar\Controller;
- 
-  use Drupal\Core\Controller\ControllerInterface;
-  use Symfony\Component\DependencyInjection\ContainerInterface;
- 
-  class FoobarController implements ControllerInterface {
- 
-  public static function create(ContainerInterface $container) {
-    return new static($container->get('module_handler'));
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
+use Drupal\slang\Services\Slang as SlangService;
+
+/**
+ * Slang Default Controller
+ */
+class DefaultController implements ContainerInjectionInterface {
+
+  /**
+  * @var Drupal\slang\Services\Slang
+  */
+  protected $slang;
+
+ /**
+  * @var \TwigEnvironment
+  */
+  protected $twig;
+
+  /**
+   * Constructor
+   *
+   * @param Drupal\slang\Services\Slang
+   * @param \TwigEnvironment $twig
+   */
+  public function __construct(SlangService $slang,\TwigEnvironment $twig) {
+    $this->twig = $twig;
+    $this->slang = $slang;
   }
 
-   /**
-   * This will return the output of the foobar page.
+  /**
+   * {@inheritdoc}
    */
-  public function foobarPage() {
-    return array(
-      '#markup' => t('This is the demo foobar page.'),
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('slang.phrase_collection'),
+      $container->get('twig')
     );
   }
- 
+
+  /**
+   * helloAction
+   *
+   * @param String $name
+   */
+  public function helloAction($name) {
+    $twig = $this->twig;
+    $path = drupal_get_path('module', 'slang') . '/templates/example.html.twig';
+    $template = $twig->loadTemplate($path);
+    return $template->render(array(
+      'name' => $name,
+      'title' => 'Slang Demo'
+    ));
+  }
+
+  public function slangAction($country) {
+    $rand = $this->slang->getRandom($country);
+    $twig = $this->twig;
+    $path = drupal_get_path('module', 'slang') . '/templates/slang.html.twig';
+    $template = $twig->loadTemplate($path);
+    drupal_set_title("slang phrase");
+    return $template->render(array('phrase' => $rand));
+  }
+
 }
+
  
 </code></pre>
 				</section>
@@ -526,64 +452,38 @@ Drupal\foobar\Controller\FoobarController.php
 
 
         <section>
-    
+          <h2>Dependency Injection</h2>
           <img src="assets/images/power_rangers.jpg" alt="">
 
         </section>
 
-<section>
+        <section>
 					<h2>Controller, Inyección de Dependencias</h2>
 <pre><code class="php text-small">&lt;?php
+//...
 
-  namespace Drupal\foobar\Controller;
- 
-  use Drupal\Core\Controller\ControllerInterface;
-  use Symfony\Component\DependencyInjection\ContainerInterface;
-
-  /* Add use Connection */
-  use Drupal\Core\Database\Connection;
- 
-  class FoobarController implements ControllerInterface {
-
-   / **
-    * The database connection.
-    *
-    * @var \Drupal\Core\Database\Connection;
-    */
-    protected $database; 
-    /**
-     * Constructs a \Drupal\foobar\Controller\FoobarController object.
-     *
-     * @param \Drupal\Core\Database\Connection $database
-     *   The database connection.
-    */
-    public function __construct(Connection $database) {
-      $this->database = $database;
-    } 
-    /**
-     * {@inheritdoc}
-     */
-    public static function create(ContainerInterface $container) {
-      return new static($container->get('database'));
-    } 
-
-    /**
-     * This will return the output of the foobar page.
-     */
-    public function foobarPage() {
-
-      /* query the database
-       $this->database->query('YOUR SQL');
-       handle the db results as usual
-      */
-
-      return array(
-        '#markup' => t('This is the demo foobar page.'),
-      );
-    }
- 
+  /**
+   * Constructor
+   *
+   * @param Drupal\slang\Services\Slang
+   * @param \TwigEnvironment $twig
+   */
+  public function __construct(SlangService $slang,\TwigEnvironment $twig) {
+    $this->twig = $twig;
+    $this->slang = $slang;
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('slang.phrase_collection'),
+      $container->get('twig')
+    );
+  }
+
+//...
 </code></pre>
 				</section>
 
@@ -595,10 +495,145 @@ Drupal\foobar\Controller\FoobarController.php
 				</section>
 
         <section>
+          <h2>Service Container</h2>
+slang.services.yml
+<pre><code class="php text-small">parameters:
+  slang.phrases:
+    costa_rica:
+      - "Pura vida"
+      - "Mae"
+      - "Chineado"
+      - "Tuani"
+    peru:
+      - "Bacán"
+      - "Piola"
+    san_francisco:
+      - "HELLA"
+services:
+  slang.phrase_collection:
+    class: Drupal\slang\Services\Slang
+    arguments:
+      - %slang.phrases%
+    calls:
+      - [setCountry, ["costa_rica"]]
+  slang.twig.title:
+    class: Drupal\slang\Plugin\Twig\TwigTitle
+    tags:
+      - { name:twig.extension }
+
+</code></pre>
+        </section>
+
+        <section>
+          <h2>Service Container</h2>
+slang/lib/Drupal/slang/Services/Slang.php
+<pre><code class="php text-small">&lt;?php
+namespace Drupal\slang\Services;
+
+use Symfony\Component\DependencyInjection\ContainerInterface;
+
+class Slang {
+
+  protected $country;
+
+  public function __construct($quotes) {
+    $this->quotes = $quotes;
+  }
+
+  /**
+   * 
+   * @param String $country Slang country
+   */
+  public function setCountry($country) {
+    $this->country = $country;
+  }
+}
+</code></pre>
+        </section>
+
+        <section>
           <h2>Anotaciones</h2>
           <div>
             Un contenedor de servicios (o contenedor de inyección de dependencias) es un objeto PHP que gestiona la creación de instancias de los servicios (es decir, de los objetos).
           </div>
+        </section>
+
+        <section>
+          <h2></h2>
+<pre><code>&lt;?php
+namespace Drupal\slang\Plugin\Block;
+
+use Drupal\block\BlockBase;
+use Drupal\block\Annotation\Block;
+use Drupal\Core\Annotation\Translation;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\slang\Services\Slang;
+
+/**
+ * Provides a "Show Countrys" block.
+ *
+ * @Block(
+ *   id = "slang_show_country_block",
+ *   admin_label = @Translation("Show countrys")
+ * )
+ */
+class ShowCountryBlock extends BlockBase implements ContainerFactoryPluginInterface {
+
+  /**
+   * @param array  $configuration     [description]
+   * @param string $plugin_id         [description]
+   * @param array  $plugin_definition [description]
+   * @param Slang  $slang             [description]
+   */
+  public function __construct(array $configuration, $plugin_id, array $plugin_definition, Slang $slang) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition);
+    $this->slang = $slang;
+  }
+
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, array $plugin_definition) {
+    return new static($configuration, $plugin_id, $plugin_definition, $container->get('slang.phrase_collection'));
+  }
+
+
+  /**
+   * Overrides \Drupal\block\BlockBase::settings().
+   */
+  public function settings() {
+    return array(
+      'properties' => array(
+        'administrative' => TRUE
+      ),
+      'seconds_online' => 900,
+      'max_list_count' => 10
+    );
+  }
+
+  /**
+   * Implements \Drupal\block\BlockBase::build().
+   */
+  public function build() {
+    $build = array(
+      '#theme' => 'select',
+      '#prefix' => '<p> The country list</p>',
+      '#attributes' => array(
+        'onchange' => 'location.replace("/wawa");return false;'
+      ),
+    );
+
+    $build['#options'][] = '- Select -';
+    $build['#options'][] = $this->slang->getCountry();
+    $build['#options'][] = $this->slang->getCountry() . '2';
+
+    return $build;
+  }
+
+}            
+</code></pre>
         </section>
 
 				<section>
