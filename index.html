@@ -91,6 +91,7 @@
 					<p><a href="http://crossfunctional.net/blog/2013/mar/symfony-components-in-drupal-8">http://crossfunctional.net/blog/2013/mar/symfony-components-in-drupal-8</a></p>
 				</section>
 
+				<!--
 				<section>
 					<h2>Que es REST ?</h2>
 					<p>REST = Representational State Transfer.<br/><br/></p>
@@ -115,10 +116,15 @@
 						<li>Drupal trabaja como un proveedor de interfaz de servicios web.<br/><br/></li>
 						<li>Los datos son intercambiados en un formato entendible para los dispositivos.<br/><br/></li>
 					</ul>
-				</section>
+				</section> 
+				-->
 
 				<section>
-					<h1>The new Drupal Way</h1>
+					<blockquote>
+						<br/>
+						Symfony is not the biggest change in Drupal 8. PHP 5.3 is the big change <br/><br/> ~ @Crell (Larry Garfield) 
+						<br/><br/>
+				 	</blockquote>
 				</section>
 
 				<section>
@@ -161,6 +167,19 @@ $php composer.phar install
 				</section>
 
 				<section>
+					<h2>YAML</h2>
+					<div class="text-left">
+						Es un formato de serialización de datos legible por humanos.
+					</div>
+					<br/>
+					<div class="text-left">
+						YAML significa "YAML Ain't Another Markup Language (en castellano, "YAML no es otro lenguaje de marcado"). <br/> A comienzos de su desarrollo, YAML significaba "Yet Another Markup Language" ("Otro lenguaje de marcado más") para distinguir su propósito centrado en los datos en lugar del marcado de documentos.
+					</div>
+					<br/>
+					<p><a href="http://www.yaml.org/">http://www.yaml.org/</a></p>
+				</section>
+
+				<section>
 					<h2>PSR-0</h2>
 					<div class="text-medium">
 						Es el primero de los estándares de código recomendados y establecido por el PHP Framework Interoperability Group.
@@ -177,19 +196,26 @@ $php composer.phar install
 					</ul>
 				</section>
 
-        <section>
-          <h2>Namespaces</h2>
-          <div class="text-medium">
-            En su definición más amplia los espacios de nombres (namespaces) son una manera de encapsular elementos.
-            <br/><br/>
-          </div>
-          <div class="text-medium">
-            Como se describe en el manual de referencia de PHP, los espacios de nombres son similares a los directorios que separan los archivos en el sistema operativo. 
-          </div>
-        </section>
+				<section>
+					<h2>Namespaces</h2>
+					<div class="text-medium">
+						Son una manera de encapsular elementos.
+						<br/><br/>
+						Como se describe en el manual de referencia de PHP, los Namespaces son similares a los directorios que separan los archivos en el sistema operativo. 
+					</div>
+				</section>
 
 				<section>
-					<h2>Ejemplo de implementación</h2>
+					<blockquote>
+						<br/>
+				 		"We replaced all of your excess divs with folders." <br/><br/> ~ @Crell (Larry Garfield) on #irc #drupal-wscci
+				 		<br/>
+				 		<br/>
+				 	</blockquote>
+				</section>
+
+				<section>
+					<h2>Ejemplo de autoload</h2>
 					<div class="text-medium left">
 						A continuación, se muestra una función de ejemplo para demostrar de forma sencilla cómo se cargan de automáticamente las clases con la propuesta anterior.
 					</div>	
@@ -214,24 +240,59 @@ function autoload($className)
 				</section>
 
 				<section>
-					<h1>Los módulos en Drupal 8</h1>
+					<h2>Controller</h2>
+					<p class="text-medium">
+					Un controlador es una función que se encarga de obtener la información de la petición HTTP y de generar y devolver la respuesta.<br/><br/>
+					</p>
+					<p>
+					La respuesta puede ser una página HTML, un documento XML, un array JSON serializado, una imagen, una redirección a otra página, un error de tipo 404 o cualquier otra cosa que se te ocurra. El controlador contiene toda la lógica que tu aplicación necesita para generar el contenido de la página.
+					</p>
 				</section>
 
 				<section>
-					<h2>YAML</h2>
-					<div class="text-left">
-						Es un formato de serialización de datos legible por humanos.
+					<h2>Routing</h2>
+					<div class="break">
+						Una ruta es un mapeo desde un URL hasta un acción en un controlador.
 					</div>
-					<br/>
-					<div class="text-left">
-						YAML significa "YAML Ain't Another Markup Language (en castellano, "YAML no es otro lenguaje de marcado"). <br/> A comienzos de su desarrollo, YAML significaba "Yet Another Markup Language" ("Otro lenguaje de marcado más") para distinguir su propósito centrado en los datos en lugar del marcado de documentos.
-					</div>
-					<br/>
-					<p><a href="http://www.yaml.org/">http://www.yaml.org/</a></p>
 				</section>
 
 				<section>
-					<h2>De slang.info <br>a<br> slang.info.yml</h2>
+					<h2>Dependecy Injection</h2>
+					<div>
+						La inyección de dependencias consiste en pasar (inyectar) a cada componente o clase todos los objetos que necesitan (dependencias) ya creados y configurados a través de sus constructores, métodos o campos.
+					</div>
+					<br/>
+					<p>
+						<a href="http://fabien.potencier.org/article/11/what-is-dependency-injection">What is Dependency Injection?</a>
+					</p>
+				</section>
+
+		        <section>
+		          <h2>Dependency Injection</h2>
+		          <img src="assets/images/power_rangers.jpg" alt="">
+
+		        </section>
+
+				<section>
+					<h2>Service Containers</h2>
+					<div>
+						Un contenedor de servicios (o contenedor de inyección de dependencias) es un objeto PHP que gestiona la creación de instancias de los servicios (es decir, de los objetos).
+					</div>
+				</section>
+
+				<section>
+		          <h2>Anotaciones</h2>
+		          <div>
+		            @
+		          </div>
+		        </section>
+
+				<section>
+					<h1>The new Drupal Way</h1>
+				</section>
+
+				<section>
+					<h2>De slang.info a slang.info.yml</h2>
 slang.info.yml
 <pre><code class="markdown">
 name: Slang
@@ -254,19 +315,12 @@ configure: admin/config/slang
 ├── slang.info.yml
 ├── slang.routing.yml
 ├── slang.services.yml
+
 </code></pre>
 				</section>
 
-				
-
 				<section>
-					<blockquote>
-				 		"We replaced all of your excess divs with folders." <br/><br/> ~ @Crell (Larry Garfield) on #irc #drupal-wscci
-				 	</blockquote>
-				</section>
-
-				<section>
-					<h2>Estructura de módulo block</h2>
+					<h2>Estructura del modulo slang</h2>
 <pre><code class="markdown">.
 ├── config
 │   └── slang.settings.yml
@@ -301,12 +355,7 @@ configure: admin/config/slang
 				</section>
 
 				<section>
-					<h2>Routing</h2>
-					<div class="break">
-						Una ruta es un mapeo desde un URL hasta un acción en un controlador.
-						<br/><br/>
-					</div>
-slang.routing.yml					
+					<h2>slang.routing.yml</h2>					
 <pre><code class="markdown">
 slang_settings_form:
   pattern: '/admin/config/slang'
@@ -351,16 +400,6 @@ function slang_menu(){
 
 
 </code></pre>
-				</section>
-
-				<section>
-					<h2>Controller</h2>
-					<p class="text-medium">
-					Un controlador es una función que se encarga de obtener la información de la petición HTTP y de generar y devolver la respuesta. 
-					</p>
-					<p>
-					La respuesta puede ser una página HTML, un documento XML, un array JSON serializado, una imagen, una redirección a otra página, un error de tipo 404 o cualquier otra cosa que se te ocurra. El controlador contiene toda la lógica que tu aplicación necesita para generar el contenido de la página.
-					</p>
 				</section>
 
 <section>
@@ -434,28 +473,9 @@ class DefaultController implements ContainerInjectionInterface {
   }
 
 }
-
  
 </code></pre>
 				</section>
-
-				<section>
-					<h2>Dependecy Injection</h2>
-					<div>
-						La inyección de dependencias consiste en pasar (inyectar) a cada componente o clase todos los objetos que necesitan (dependencias) ya creados y configurados a través de sus constructores, métodos o campos.
-					</div>
-					<br/>
-					<p>
-						<a href="http://fabien.potencier.org/article/11/what-is-dependency-injection">What is Dependency Injection?</a>
-					</p>
-				</section>
-
-
-        <section>
-          <h2>Dependency Injection</h2>
-          <img src="assets/images/power_rangers.jpg" alt="">
-
-        </section>
 
         <section>
 					<h2>Controller, Inyección de Dependencias</h2>
@@ -485,13 +505,6 @@ class DefaultController implements ContainerInjectionInterface {
 
 //...
 </code></pre>
-				</section>
-
-				<section>
-					<h2>Service Containers</h2>
-					<div>
-						Un contenedor de servicios (o contenedor de inyección de dependencias) es un objeto PHP que gestiona la creación de instancias de los servicios (es decir, de los objetos).
-					</div>
 				</section>
 
         <section>
@@ -549,13 +562,6 @@ class Slang {
   }
 }
 </code></pre>
-        </section>
-
-        <section>
-          <h2>Anotaciones</h2>
-          <div>
-            Un contenedor de servicios (o contenedor de inyección de dependencias) es un objeto PHP que gestiona la creación de instancias de los servicios (es decir, de los objetos).
-          </div>
         </section>
 
         <section>
@@ -637,11 +643,7 @@ class ShowCountryBlock extends BlockBase implements ContainerFactoryPluginInterf
         </section>
 
 				<section>
-					<h1>CODA<br/>Code Or Didn't Happen</h1>
-				</section>
-
-				<section>
-					<h2>Gracias</h2>
+					<h2>Gracias - DEMO</h2>
 					<div class="half">
 						<img src="assets/images/jmolivas.jpg">
 						<p>Jesús Manuel Olivas</p>
